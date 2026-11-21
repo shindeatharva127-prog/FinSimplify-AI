@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>FinSimplify AI — Financial News, Simply Explained</title>
+<link rel="stylesheet" href="/static/css/style.css" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💹</text></svg>" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <span class="brand-mark" aria-hidden="true">💹</span>
+        <div>
+          <h1>FinSimplify AI</h1>
+          <p class="tagline">Financial news, explained in plain English.</p>
+        </div>
+      </div>
+      <button id="refresh-btn" class="btn btn-secondary" type="button"><span aria-hidden="true">⟳</span> Refresh News</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="controls" aria-label="Search and filter news">
+      <form id="search-form" class="search-bar" role="search">
+        <label for="search-input" class="visually-hidden">Search financial topics or companies</label>
+        <input id="search-input" type="search" placeholder="Search topics, companies, tickers…" maxlength="200" autocomplete="off" />
+        <button type="submit" class="btn btn-primary">Search</button>
+      </form>
+      <div class="topic-filters" id="topic-filters" role="tablist" aria-label="Topic filters">
+        <button class="chip active" data-topic="" role="tab" aria-selected="true" type="button">All</button>
+        <button class="chip" data-topic="economy" role="tab" aria-selected="false" type="button">Economy</button>
+        <button class="chip" data-topic="stock_market" role="tab" aria-selected="false" type="button">Stock Market</button>
+        <button class="chip" data-topic="banking" role="tab" aria-selected="false" type="button">Banking</button>
+        <button class="chip" data-topic="business" role="tab" aria-selected="false" type="button">Business</button>
+        <button class="chip" data-topic="technology" role="tab" aria-selected="false" type="button">Technology</button>
+        <button class="chip" data-topic="global_news" role="tab" aria-selected="false" type="button">Global News</button>
+      </div>
+    </section>
+
+    <div id="status-banner" class="status-banner" hidden></div>
+    <section id="news-grid" class="news-grid" aria-live="polite" aria-label="News articles"></section>
+    <div id="empty-state" class="empty-state" hidden><p>No articles found. Try a different search or topic.</p></div>
+  </main>
+
+  <div id="modal-overlay" class="modal-overlay" hidden>
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button id="modal-close" class="modal-close" type="button" aria-label="Close">✕</button>
+      <div id="modal-content" class="modal-content"></div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="disclaimer">⚠️ AI-generated summaries may be inaccurate or incomplete. They are provided for general information and education only, and are not personalized financial, investment, or trading advice. Always verify important details with the original source before making decisions.</p>
+      <p class="footer-meta">FinSimplify AI · News via NewsAPI · Summaries via Groq (Llama 3.3)</p>
+    </div>
+  </footer>
+
+  <template id="skeleton-card-template">
+    <div class="card skeleton" aria-hidden="true">
+      <div class="skeleton-img"></div>
+      <div class="card-body">
+        <div class="skeleton-line skeleton-line-short"></div>
+        <div class="skeleton-line"></div>
+        <div class="skeleton-line"></div>
+        <div class="skeleton-line skeleton-line-short"></div>
+      </div>
+    </div>
+  </template>
+
+  <script src="/static/js/app.js"></script>
+</body>
+</html>
