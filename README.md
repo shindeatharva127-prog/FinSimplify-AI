@@ -68,3 +68,9 @@ Keys live only in server environment variables; article and AI text is rendered 
 ## Deployment
 
 Any ASGI host (Render, Railway, Fly.io, Docker): start with `uvicorn app.main:app --host 0.0.0.0 --port $PORT` and set `NEWSAPI_KEY` / `GROQ_API_KEY` as platform environment variables. On a public host, remove `--host 127.0.0.1` from the launchers (they are for local use).
+
+## Documentation link
+https://drive.google.com/file/d/1b1GzfQzmFX7gMFvmOY5bfIShS0BXzUlA/view?usp=drive_link
+
+## Live project link
+https://my-project-news-simplify.onrender.com/
